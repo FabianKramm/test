@@ -100,7 +100,7 @@ EOF
 if [ "$SKIP_DOWNLOAD" = "false" ]; then
   # Kubernetes version is required
   if [ -z "$DOWNLOAD_URL" ]; then
-    echo "Error: --download-url is required"
+    echo "Error: --download-url is required or specify --skip-download to skip the download"
     echo "Usage: $0 --download-url <url>"
     exit 1
   fi
