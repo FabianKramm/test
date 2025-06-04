@@ -56,13 +56,6 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-# Kubernetes version is required
-if [ -z "$DOWNLOAD_URL" ]; then
-  echo "Error: --download-url is required"
-  echo "Usage: $0 --download-url <url>"
-  exit 1
-fi
-
 # figure out the target architecture
 TARGETARCH="amd64"
 if is_arm; then
@@ -105,6 +98,13 @@ EOF
 
 # --- create data dir ---
 if [ "$SKIP_DOWNLOAD" = "false" ]; then
+  # Kubernetes version is required
+  if [ -z "$DOWNLOAD_URL" ]; then
+    echo "Error: --download-url is required"
+    echo "Usage: $0 --download-url <url>"
+    exit 1
+  fi
+
   # Install vcluster binary
   mkdir -p ${DATA_DIR}
   mkdir -p ${DATA_DIR}/bin
