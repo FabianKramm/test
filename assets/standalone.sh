@@ -91,7 +91,7 @@ TasksMax=infinity
 TimeoutStartSec=0
 Restart=always
 RestartSec=5s
-ExecStart=${DATA_DIR}/bin/vcluster --config ${DATA_DIR}/config.yaml
+ExecStart=${DATA_DIR}/bin/vcluster start --config ${DATA_DIR}/config.yaml
 
 EOF
 }
