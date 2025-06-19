@@ -1,4 +1,4 @@
-VCLUSTER_PLATFORM_VERSION=v0.26.0-beta.4
+VCLUSTER_PLATFORM_VERSION=v4.3.1
 
 # Create platform.yaml
 cat <<EOF > ./platform.yaml
